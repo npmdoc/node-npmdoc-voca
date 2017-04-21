@@ -1,1 +1,38 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-voca",     "homepage": "https://github.com/npmdoc/node-npmdoc-voca",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-voca.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [voca (v1.3.0)](https://vocajs.com)  [![npm package](https://img.shields.io/npm/v/npmdoc-voca.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-voca) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-voca.svg)](https://travis-ci.org/npmdoc/node-npmdoc-voca)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-voca",
+    "keywords": [
+        "documentation",
+        "voca"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_voca.js",
+    "name": "npmdoc-voca",
+    "nameAlias": "npmdoc_voca",
+    "nameOriginal": "npmdoc-voca",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-voca.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
